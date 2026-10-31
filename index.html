@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recrudy: your agency recruitment companion</title>
+<meta name="description" content="Recrudy is recruitment agency software built in Australia by agency recruiters: find talent, win clients, make placements and stay compliant, all in one place.">
+<meta property="og:title" content="Recrudy: your agency recruitment companion">
+<meta property="og:description" content="Agency recruitment software built in Australia by recruiters, for recruiters.">
+<meta property="og:image" content="https://recrudy.com.au/recrudy-logo.png">
+<meta property="og:url" content="https://recrudy.com.au/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#14834A}a:hover{color:#0E6236}
+
+/* Ask Rudy: a slow head tilt, a blink every few seconds and the odd wink of his brown eye */
+.rudyHead{transform-box:view-box;transform-origin:60px 92px;animation:rudyTilt 7s ease-in-out infinite}
+.rudyLidL,.rudyLidR,.rudyLidW{opacity:0}
+.rudyLidR{animation:rudyBlink 5.3s infinite}
+.rudyLidL{animation:rudyBlink 5.3s infinite}
+.rudyLidW{animation:rudyWink 13.7s infinite}
+@keyframes rudyTilt{0%,100%{transform:rotate(0deg)}22%{transform:rotate(-5deg)}30%{transform:rotate(-5deg)}58%{transform:rotate(3deg) translateY(-1px)}70%{transform:rotate(3deg) translateY(-1px)}}
+@keyframes rudyBlink{0%,91%,95.5%,100%{opacity:0}92%,94.5%{opacity:1}}
+@keyframes rudyWink{0%,60%,66%,100%{opacity:0}61%,65%{opacity:1}}
+a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
+@media (prefers-reduced-motion: reduce){.rudyHead,.rudyLidL,.rudyLidR,.rudyLidW{animation:none}}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #15171A; background: #FFFFFF; line-height: 1.5">
+
+  <!-- Navigation -->
+  <header style="border-bottom: 1px solid #E6E6E7; background: #FFFFFF">
+    <nav aria-label="Main" style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" aria-label="Recrudy home" style="position: relative; display: inline-block; padding-top: 24px; font-family: Inter, system-ui, sans-serif; font-size: 30px; line-height: 1; font-weight: 800; letter-spacing: -0.045em; color: #15171A; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 120 100" style="position: absolute; left: 36px; top: 0px; width: 46px; height: 38px"><clipPath id="rudyNavc"><rect x="0" y="0" width="120" height="88"/></clipPath><g clip-path="url(#rudyNavc)">
+  <defs>
+    <linearGradient id="rudyNavearG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3A35E"/><stop offset="1" stop-color="#C27838"/></linearGradient>
+    <radialGradient id="rudyNavfaceG" cx="0.5" cy="0.45" r="0.6"><stop offset="0.6" stop-color="#FFFDF8"/><stop offset="1" stop-color="#F1E6D6"/></radialGradient>
+  </defs>
+  <!-- ears: long, wavy, hanging -->
+  <path d="M36 26 C20 26 10 40 10 58 C9 68 11 77 14 84 C16 88 19 86 20 83 C22 88 26 88 27 84 C29 88 33 87 34 82 C39 72 41 52 41 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M84 26 C100 26 110 40 110 58 C111 68 109 77 106 84 C104 88 101 86 100 83 C98 88 94 88 93 84 C91 88 87 87 86 82 C81 72 79 52 79 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M18 50 C16 60 18 70 21 78 M24 46 C23 58 24 68 27 78 M102 50 C104 60 102 70 99 78 M96 46 C97 58 96 68 93 78" stroke="#B9763A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- head: fluffy crown -->
+  <path d="M31 50 C29 34 37 23 46 20 C48 16 53 15 55 18 C57 14 63 14 65 18 C67 15 72 16 74 20 C83 23 91 34 89 50 C91 66 84 82 60 84 C36 82 29 66 31 50 Z" fill="url(#rudyNavfaceG)" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- apricot crown and eye patches -->
+  <path d="M80 28 C78 24 72 21 67 21 C70 25 72 30 73 35 C77 33 81 32 84 33 Z" fill="#E7C49A" opacity="0.9"/>
+  <path d="M52 22 C54 28 55 34 55 40 M68 22 C66 28 65 34 65 40" stroke="#E4D6C2" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M86 44 C85 39 80 36 75 37 C71 38 68 40 67 43 C72 41 80 41 86 44 Z" fill="#E2BE93"/>
+  <!-- fur strands -->
+  <path d="M55 24 l2 5 M63 23 l-1 5 M36 60 l4 1 M84 60 l-4 1 M38 68 l4 -1 M82 68 l-4 -1" stroke="#E2D3BE" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- brows -->
+  <path d="M37 40 q7 -5 14 -1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M69 39 q7 -4 14 1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- left eye: big, dark brown, glossy -->
+  <ellipse cx="44.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="45" cy="50.5" r="7.4" fill="#3B2312"/>
+  <circle cx="45.4" cy="50.8" r="4.2" fill="#140B06"/>
+  <circle cx="42.4" cy="47.6" r="2.3" fill="#FFFFFF"/>
+  <circle cx="47.6" cy="53.4" r="1" fill="#FFFFFF" opacity="0.8"/>
+  <!-- right eye: pale blue, glancing up and out (his signature) -->
+  <ellipse cx="75.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="78" cy="48" r="5.4" fill="#A9CDEC" stroke="#5E8FBF" stroke-width="1"/>
+  <circle cx="78.6" cy="47.6" r="2.4" fill="#1B2733"/>
+  <circle cx="76.6" cy="45.8" r="1.5" fill="#FFFFFF"/>
+  <!-- beard / dark muzzle -->
+  <path d="M50 62 C48 69 52 76 60 76 C68 76 72 69 70 62 C66 65 54 65 50 62 Z" fill="#9C8B7C" opacity="0.85"/>
+  <path d="M53 68 l-1 4 M57 70 l-0.4 4 M63 70 l0.4 4 M67 68 l1 4" stroke="#6B5C50" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- natural frown with two little white teeth showing (underbite) -->
+  <path d="M52.5 72.5 C55 68.6 65 68.6 67.5 72.5" stroke="#2B201A" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M56.6 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M61.2 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M55 74.6 C58 75.8 62 75.8 65 74.6" stroke="#4A3D34" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- nose: broad, flat-faced -->
+  <path d="M52.5 58.5 C52.5 54 67.5 54 67.5 58.5 C67.5 63 63 65.5 60 65.5 C57 65.5 52.5 63 52.5 58.5 Z" fill="#1A1412" stroke="#3A2617" stroke-width="1"/>
+  <path d="M56 61 q1.5 -1.6 3 0 M61 61 q1.5 -1.6 3 0" stroke="#4A403C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="57" cy="56.8" rx="2.6" ry="1.2" fill="#5B524E"/>
+</g><path d="M28 88 C28 75 47 75 47 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M73 88 C73 75 92 75 92 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M34.5 80 v6 M40.5 80 v6 M79.5 80 v6 M85.5 80 v6" stroke="#3A2617" stroke-width="1.5" stroke-linecap="round"/></svg>recrudy<span style="color: #F26B1D">.</span></a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+        <a href="#problem" style="color: #3A3D42; text-decoration: none">Why Recrudy</a>
+        <a href="#attraction" style="color: #3A3D42; text-decoration: none">365 Attraction</a>
+        <a href="#bd" style="color: #3A3D42; text-decoration: none">Automated BD</a>
+        <a href="#process" style="color: #3A3D42; text-decoration: none">Process Automation</a>
+        <a href="#pricing" style="color: #3A3D42; text-decoration: none">Pricing</a>
+        <a href="#story" style="color: #3A3D42; text-decoration: none">Our story</a>
+        <a href="#demo" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #F26B1D; color: #FFFFFF; text-decoration: none; font-weight: 600">Book a demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 56px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; display: inline-flex; align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 14px; font-weight: 600">Built by agency recruiters, for recruitment agencies</p>
+      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em">Less admin. More time with clients and candidates.</h1>
+      <p style="margin: 0; max-width: 560px; font-size: 20px; color: #3A3D42">Recrudy comes from 25 years of agency experience in Australia, recruiting on global platforms that miss what recruiters need and are rarely built purely for agencies, or for Australia.</p>
+      <p style="margin: 14px 0 0; max-width: 560px; font-size: 20px; color: #3A3D42"><strong style="color: #15171A">Recrudy is different:</strong> one place to find talent, win clients, make placements and stay compliant, so you save time, cut cost and take the risk out of every placement.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#demo" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #14834A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px">Book a demo</a>
+        <a href="#pricing" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #15171A; color: #15171A; text-decoration: none; font-weight: 600; font-size: 17px">See pricing</a>
+      </div>
+    </div>
+
+    <!-- Product glimpse -->
+    <div aria-label="A glimpse of Recrudy" role="img" style="position: relative; border-radius: 28px; background: #15171A; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 30px 60px -30px rgba(21,23,26,0.45)">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+        <span style="color: #FFFFFF; font-weight: 600; font-size: 15px">Talent Pipeline</span>
+        <span style="color: #9EA3AB; font-size: 13px">Search · title:"senior associate" litigation -graduate</span>
+      </div>
+      <div style="border-radius: 18px; background: #FFFFFF; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; justify-content: space-between; gap: 8px; align-items: flex-start">
+          <div><p style="margin: 0; font-weight: 700; font-size: 17px">Sarah Whitfield</p><p style="margin: 0; font-size: 14px; color: #3A3D42">Senior Associate · Harbour &amp; Finch Lawyers, Brisbane</p></div>
+          <span style="display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; padding: 3px 10px 3px 8px; border-radius: 999px; background: #E6F4EC; color: #0E6236; font-size: 12px; font-weight: 600"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15V1.8h10.5"/><path d="M6.5 1.8v2.4M11.5 1.8v2.4"/><rect x="5.2" y="4.2" width="7.6" height="5.2" rx="1" fill="currentColor" stroke="none"/></svg>On the market</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 600">
+          <span style="padding: 3px 10px; border-radius: 999px; background: #FDEBDF; color: #B04A0E">Commercial litigation</span>
+          <span style="padding: 3px 10px; border-radius: 999px; background: #FDEBDF; color: #B04A0E">Contract disputes</span>
+          <span style="padding: 3px 10px; border-radius: 999px; background: #F2F2F3; color: #3A3D42">7 years PQE</span>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #3A3D42">Studied at Eastvale University · Previously at Marlow Grant Legal</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 4px">
+          <span style="padding: 7px 12px; border-radius: 10px; border: 1px solid #D4D4D6; font-size: 13px; font-weight: 600">Profile</span>
+          <!-- Logo slots: drop in the official LinkedIn and SEEK logo files -->
+          <span title="LinkedIn profile" style="display: inline-flex; align-items: center; justify-content: center; min-width: 76px; height: 34px; padding: 0 10px; border-radius: 10px; border: 1.5px dashed #9EA3AB; color: #5A5E64; font-size: 11px; font-weight: 600">LinkedIn logo</span>
+          <span title="Found on SEEK" style="display: inline-flex; align-items: center; justify-content: center; min-width: 76px; height: 34px; padding: 0 10px; border-radius: 10px; border: 2px solid #F26B1D; background: #FDEBDF; color: #B04A0E; font-size: 11px; font-weight: 700">SEEK logo ✓</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+        <div style="border-radius: 18px; background: #23262B; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px">
+            <p style="margin: 0; color: #9EA3AB; font-size: 13px">Companies</p>
+            <span style="padding: 2px 8px; border-radius: 999px; background: #3A3D42; color: #E4E6E9; font-size: 11px; font-weight: 600">Target</span>
+          </div>
+          <p style="margin: 0; color: #FFFFFF; font-weight: 700; font-size: 15px">Northgate Health Group</p>
+          <p style="margin: 2px 0 0; display: flex; align-items: baseline; gap: 6px"><span style="color: #FFFFFF; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 34px; font-weight: 800; line-height: 1">65</span><span style="color: #9EA3AB; font-size: 12px">Sales Lead Score</span></p>
+          <div style="display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: #3A3D42"><span style="width: 38%; background: #4CB57E"></span><span style="width: 62%; background: #F26B1D"></span></div>
+          <p style="margin: 0; color: #9EA3AB; font-size: 11px">Marketing 25 · Sales 40</p>
+          <p style="margin: 0; color: #F26B1D; font-size: 13px; font-weight: 600">Sales-ready</p>
+        </div>
+        <div style="border-radius: 18px; background: #23262B; padding: 16px">
+          <p style="margin: 0; color: #9EA3AB; font-size: 13px">Compliance</p>
+          <p style="margin: 4px 0 0; color: #FFFFFF; font-weight: 600; font-size: 15px">Practising certificate ✓<br>Law Society register ✓</p>
+          <p style="margin: 0; color: #F26B1D; font-size: 13px; font-weight: 600">Ready to place</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section id="problem" style="background: #15171A; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; color: #F26B1D; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">The problem we lived with</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Most recruitment software was built for the people who sell it, not the people who use it.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px">
+        <div style="border-radius: 22px; background: #23262B; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Admin eats the week</h3>
+          <p style="margin: 0; color: #C9CCD1">Fields nobody fills in, screens nobody needs, and the same details typed into three places. Hours that should go to clients and candidates.</p>
+        </div>
+        <div style="border-radius: 22px; background: #23262B; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Paying three times for one candidate</h3>
+          <p style="margin: 0; color: #C9CCD1">A search-platform seat, a talent-database subscription, then paid messages to someone already in your own database. Each tool adds time and cost, and none of them talk to each other.</p>
+        </div>
+        <div style="border-radius: 22px; background: #23262B; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Risk slips through the gaps</h3>
+          <p style="margin: 0; color: #C9CCD1">An expired check, a fee that doesn't match the terms, a guarantee nobody tracked. Problems that cost a placement, or a client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save time / cost / risk -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 44px">
+    <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
+      <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">What changes with Recrudy</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Save time. Save cost. Take the risk out.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 3px solid #15171A">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Time</h3>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
+          <li>CVs read and filled in for you; formatted and redacted in one click</li>
+          <li>Every email and call logged on its own, with call transcripts</li>
+          <li>One search across your candidates and the talent market</li>
+          <li>Only the fields recruiters use</li>
+        </ul>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 3px solid #15171A">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Cost</h3>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
+          <li>Find talent before you pay to message it, and see who you already know</li>
+          <li>Business development, floats and job sites built in, not bolted on</li>
+          <li>Your phone and SMS accounts, at cost: no markup</li>
+          <li>Clear prices per user, with no paid add-on packs</li>
+        </ul>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 3px solid #15171A">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Risk</h3>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
+          <li>Compliance checks before any placement, with expiry reminders</li>
+          <li>Fees and guarantees taken from each client's signed terms</li>
+          <li>Candidate ownership rules everyone can see</li>
+          <li>Australian hosting for calls and recordings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three pillars overview -->
+  <section id="pillars" style="background: #F4F4F5">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">How Recrudy works</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Three engines running your desk, every day of the year.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
+        <a href="#attraction" style="text-decoration: none; color: #15171A; border-radius: 24px; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800; color: #14834A">01</span>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">365 Attraction</h3>
+          <p style="margin: 0; color: #3A3D42">Talent Pipeline · Career Site Interaction · Multi Job Board Publishing</p>
+        </a>
+        <a href="#bd" style="text-decoration: none; color: #FFFFFF; border-radius: 24px; background: #15171A; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800; color: #F26B1D">02</span>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">Automated BD</h3>
+          <p style="margin: 0; color: #C9CCD1">Market Mapper · Automated Lead Scoring · Float Generator and Tracker</p>
+        </a>
+        <a href="#process" style="text-decoration: none; color: #15171A; border-radius: 24px; background: #F26B1D; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800">03</span>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">Process Automation</h3>
+          <p style="margin: 0; color: #2A2D31">CV Studio · TOB-Pilot · Pre-Built Dashboards for Recruiters</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 365 Attraction -->
+  <section id="attraction" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 22px">
+      <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">01 · 365 Attraction</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Attract talent all year, not just when a job is open.</h2>
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Talent Pipeline <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #15171A; color: #F26B1D; font-size: 11px; font-weight: 700; vertical-align: middle">Premium</span></h3><p style="margin: 4px 0 0; color: #3A3D42">Search the talent market with Boolean and filters, open their LinkedIn, and check SEEK before you spend a cent on messages.</p></div>
+        <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Career Site Interaction</h3><p style="margin: 4px 0 0; color: #3A3D42">Your own career page, embedded or integrated into your website. Candidates apply, register or follow you, and land straight in Candidates.</p></div>
+        <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Multi Job Board Publishing</h3><p style="margin: 4px 0 0; color: #3A3D42">Write the job once and publish to your career site, SEEK, LinkedIn and the partner job boards for your sector, from one screen.</p></div>
+      </div>
+    </div>
+    <div aria-label="Publishing a job" role="img" style="border-radius: 24px; background: #FFFFFF; border: 1px solid #E6E6E7; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 30px 60px -36px rgba(21,23,26,0.35)">
+      <div style="display: flex; justify-content: space-between; gap: 8px; align-items: baseline"><span style="font-weight: 700; font-size: 16px">Publish · Senior Accountant</span><span style="color: #5A5E64; font-size: 13px">Bayside Logistics</span></div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+        <div style="display: flex; justify-content: space-between; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #E6F4EC"><span style="font-weight: 600">Your career site</span><span style="color: #0E6236; font-weight: 600">Live ✓</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #E6F4EC"><span style="font-weight: 600">SEEK</span><span style="color: #0E6236; font-weight: 600">Live · 38 applicants</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #F2F2F3"><span style="font-weight: 600">LinkedIn post</span><span style="color: #3A3D42">Shared to your page</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #F2F2F3"><span style="font-weight: 600">Partner job boards</span><span style="color: #3A3D42">Pick per job</span></div>
+      </div>
+      <p style="margin: 0; color: #5A5E64; font-size: 13px">Every applicant, from every board, in one list.</p>
+    </div>
+  </section>
+
+  <!-- 02 Automated BD -->
+  <section id="bd" style="background: #15171A; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 56px; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <p style="margin: 0; color: #F26B1D; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">02 · Automated BD</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Floating candidate profiles is everyday business development for agencies. Until now, no platform mapped it and tracked it.</h2>
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Market Mapper <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle">Premium</span></h3><p style="margin: 4px 0 0; color: #C9CCD1">See every company in your patch: who uses you, who you're targeting and who you've never spoken to.</p></div>
+          <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Automated Lead Scoring</h3><p style="margin: 4px 0 0; color: #C9CCD1">Opens, clicks, replies, calls and meetings add up to a Sales Lead Score, and Recrudy tells you the moment a company is Sales-ready.</p></div>
+          <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Float Generator and Tracker <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle">Premium</span></h3><p style="margin: 4px 0 0; color: #C9CCD1">Pick a candidate and Recrudy builds the blind profile and the float, sends it to the right clients and tracks every response.</p></div>
+          <div><h3 style="margin: 0; font-size: 20px; font-weight: 700">Float Campaigns <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle">Premium</span></h3><p style="margin: 4px 0 0; color: #C9CCD1">Turn every float into a stunning email: start from a template or design your own with your logo, headers, borders and buttons. Every link is tracked, so each click lifts the lead score and drives your MQLs. Owners can lock a house style so every float stays on brand. All without leaving Recrudy.</p></div>
+        </div>
+      </div>
+      <div aria-label="A designed float email being tracked" role="img" style="border-radius: 24px; background: #23262B; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <div style="border-radius: 16px; background: #FFFFFF; color: #15171A; overflow: hidden; border: 3px solid #F26B1D">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: #15171A; color: #FFFFFF; font-size: 12px"><span style="padding: 3px 8px; border: 1px dashed #9EA3AB; border-radius: 6px; color: #C9CCD1">Your logo</span><span style="color: #9EA3AB">Candidate alert</span></div>
+          <div style="padding: 14px; display: flex; flex-direction: column; gap: 8px">
+            <p style="margin: 0; font-weight: 700; font-size: 15px">Senior Accountant · CPA · 9 years</p>
+            <p style="margin: 0; color: #3A3D42; font-size: 13px">Big 4 trained, available in 4 weeks, open to Brisbane CBD and north side.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; font-weight: 700"><span style="padding: 7px 12px; border-radius: 8px; background: #F26B1D; color: #FFFFFF">View profile</span><span style="padding: 7px 12px; border-radius: 8px; border: 1px solid #D4D4D6">Book a call</span><span style="padding: 7px 4px; color: #14834A">Every click tracked ✓</span></div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 8px; color: #9EA3AB; font-size: 13px"><span style="color: #FFFFFF; font-weight: 600; font-size: 15px">Float · Senior Accountant</span><span>Sent to 12 companies</span></div>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: center">
+          <div style="border-radius: 14px; background: #15171A; padding: 12px 6px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">9</p><p style="margin: 0; color: #9EA3AB; font-size: 12px">Opened</p></div>
+          <div style="border-radius: 14px; background: #15171A; padding: 12px 6px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">5</p><p style="margin: 0; color: #9EA3AB; font-size: 12px">Clicked</p></div>
+          <div style="border-radius: 14px; background: #15171A; padding: 12px 6px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">3</p><p style="margin: 0; color: #9EA3AB; font-size: 12px">Replied</p></div>
+          <div style="border-radius: 14px; background: #F26B1D; color: #15171A; padding: 12px 6px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 28px; font-weight: 800">2</p><p style="margin: 0; font-size: 12px; font-weight: 600">Interested</p></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+          <div style="display: flex; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 12px; background: #15171A"><span>Northgate Health Group</span><span style="color: #F26B1D; font-weight: 600">Score 65 · Sales-ready</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 12px; background: #15171A"><span>Bayside Logistics</span><span style="color: #C9CCD1">Opened twice · +10</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 12px; background: #15171A"><span>Kestrel Engineering</span><span style="color: #C9CCD1">Clicked profile · +5</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Process Automation -->
+  <section id="process" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 820px; display: flex; flex-direction: column; gap: 16px">
+      <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">03 · Process Automation</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">The admin between a good candidate and a paid invoice, done for you.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px">
+      <div style="border-radius: 24px; background: #15171A; color: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 26px; font-weight: 800">CV Studio <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle; font-family: Inter, sans-serif">Premium</span></h3>
+        <p style="margin: 0; color: #C9CCD1">Configure your template once. With one easy upload, original CVs have personal details removed automatically before anything reaches AI, then convert into submission-ready CVs in your company format.</p>
+        <p style="margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; font-weight: 600">
+          <span style="padding: 5px 12px; border-radius: 999px; background: #23262B">Upload</span>
+          <span style="padding: 5px 12px; border-radius: 999px; background: #23262B">Details removed</span>
+          <span style="padding: 5px 12px; border-radius: 999px; background: #F26B1D; color: #15171A">Submission-ready</span>
+        </p>
+      </div>
+      <div style="border-radius: 24px; background: #15171A; color: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 26px; font-weight: 800">TOB-Pilot <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle; font-family: Inter, sans-serif">Premium</span></h3>
+        <p style="margin: 0; color: #C9CCD1">Upload each client's signed terms once. Fees, guarantees and rebates fill in on every placement, so nothing is missed or under-charged.</p>
+        <p style="margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; font-weight: 600">
+          <span style="padding: 5px 12px; border-radius: 999px; background: #23262B">Fee 18%</span>
+          <span style="padding: 5px 12px; border-radius: 999px; background: #23262B">Guarantee 90 days</span>
+        </p>
+      </div>
+      <div style="border-radius: 24px; background: #FFFFFF; border: 1px solid #E6E6E7; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 26px; font-weight: 800">Pre-Built Dashboards for Recruiters</h3>
+        <p style="margin: 0; color: #3A3D42">Calls, meetings, lead scores, open jobs, placements, placement rate and sales, for each recruiter or the whole business. Nothing to set up.</p>
+        <div style="margin-top: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; text-align: center">
+          <div style="border-radius: 12px; background: #F2F2F3; padding: 10px 4px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 22px; font-weight: 800">42</p><p style="margin: 0; color: #5A5E64; font-size: 11px">Calls</p></div>
+          <div style="border-radius: 12px; background: #F2F2F3; padding: 10px 4px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 22px; font-weight: 800">6</p><p style="margin: 0; color: #5A5E64; font-size: 11px">Placements</p></div>
+          <div style="border-radius: 12px; background: #F2F2F3; padding: 10px 4px"><p style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 22px; font-weight: 800">35%</p><p style="margin: 0; color: #5A5E64; font-size: 11px">Placement %</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Any sector -->
+  <section id="sectors" style="background: #14834A; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="max-width: 820px; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; color: #F26B1D; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">Your sector, your rules</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Education, legal, health, finance or all of them. Recrudy learns how your sector works.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px">
+        <div style="border-radius: 22px; background: rgba(255,255,255,0.1); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800; color: #F26B1D">1</span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Upload your taxonomy</h3>
+          <p style="margin: 0; color: #E6F4EC">Your roles, specialisms, skills and qualifications, in your words. One sector or many.</p>
+        </div>
+        <div style="border-radius: 22px; background: rgba(255,255,255,0.1); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800; color: #F26B1D">2</span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Adverts build themselves</h3>
+          <p style="margin: 0; color: #E6F4EC">Pick a role and Job Centre fills in the right fields, requirements and wording for that role.</p>
+        </div>
+        <div style="border-radius: 22px; background: rgba(255,255,255,0.1); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 15px; font-weight: 800; color: #F26B1D">3</span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 700">Safeguarding on autopilot</h3>
+          <p style="margin: 0; color: #E6F4EC">Link each role to the public registers it needs, like a Law Society register, health practitioner or teacher registration. Recrudy asks for the checks and tracks expiry before anyone is placed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Also included -->
+  <section id="features" style="background: #F4F4F5">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+      <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">Also inside</p>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Everything else an agency runs on.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px">
+        <div style="border-radius: 20px; background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">Candidates and ATS</h3><p style="margin: 0; color: #3A3D42; font-size: 15px">Every applicant, registration and upload in one record, moved from job to placement.</p></div>
+        <div style="border-radius: 20px; background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">Companies and Clients</h3><p style="margin: 0; color: #3A3D42; font-size: 15px">Users, targets and non-users, your own custom fields, and every client contact.</p></div>
+        <div style="border-radius: 20px; background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">Activity, calls and email</h3><p style="margin: 0; color: #3A3D42; font-size: 15px">Call from the browser, record and transcribe, and see every email in one timeline.</p></div>
+        <div style="border-radius: 20px; background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">Compliance-Pilot</h3><p style="margin: 0; color: #3A3D42; font-size: 15px">Checks and credentials tracked per role, with placements held until everything's in order.</p></div>
+        <div style="border-radius: 20px; background: #15171A; color: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">StaffroomHR <span style="margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 11px; font-weight: 700; vertical-align: middle">Premium</span></h3><p style="margin: 0; color: #C9CCD1; font-size: 15px">Onboarding, contracts, leave and staff records for your own team.</p></div>
+        <div style="border-radius: 20px; background: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 700">Team chat</h3><p style="margin: 0; color: #3A3D42; font-size: 15px">Channels and direct messages for your desk, without another subscription.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
+      <p style="margin: 0; color: #14834A; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">Pricing</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Two packages. Everything included. No surprises.</h2>
+      <p style="margin: 0; font-size: 18px; color: #3A3D42">Per user, per month, for teams of 1 to 5. Bigger teams pay less per user.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 24px">
+      <div style="border-radius: 28px; background: #FFFFFF; border: 1.5px solid #D4D4D6; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+        <div>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Base</h3>
+          <p style="margin: 4px 0 0; color: #3A3D42">Run the whole desk: candidates, clients, jobs and placements.</p>
+        </div>
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 8px"><span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.02em">$150</span><span style="color: #3A3D42">per user / month + GST</span></p>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
+          <li>Candidates, ATS and Job Centre</li>
+          <li>Career Site Interaction and Multi Job Board Publishing</li>
+          <li>Companies, Clients and Automated Lead Scoring</li>
+          <li>Activity, email tracking, calls and transcripts</li>
+          <li>Compliance-Pilot</li>
+          <li>Pre-Built Dashboards for Recruiters</li>
+          <li>Team chat</li>
+        </ul>
+        <a href="#demo" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 52px; border-radius: 999px; border: 1.5px solid #15171A; color: #15171A; text-decoration: none; font-weight: 600">Start with Base</a>
+      </div>
+      <div style="border-radius: 28px; background: #15171A; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+        <div>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Premium <span style="margin-left: 8px; padding: 4px 12px; border-radius: 999px; background: #F26B1D; color: #15171A; font-size: 13px; font-weight: 700; vertical-align: middle">Most value</span></h3>
+          <p style="margin: 4px 0 0; color: #C9CCD1">Everything in Base, plus headhunting, floats, CV Studio, terms and HR.</p>
+        </div>
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 8px"><span style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.02em">$300</span><span style="color: #C9CCD1">per user / month + GST</span></p>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #E4E6E9">
+          <li>Everything in Base</li>
+          <li>Talent Pipeline: search the talent market</li>
+          <li>Market Mapper</li>
+          <li>Float Generator and Tracker</li>
+          <li>Float Campaigns: designed emails with tracked clicks</li>
+          <li>CV Studio: details removed, submission-ready CVs</li>
+          <li>TOB-Pilot: fees and guarantees from signed terms</li>
+          <li>StaffroomHR for your own team</li>
+        </ul>
+        <a href="#demo" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 52px; border-radius: 999px; background: #F26B1D; color: #15171A; text-decoration: none; font-weight: 700">Start with Premium</a>
+      </div>
+    </div>
+    <p style="margin: 0; color: #3A3D42; font-size: 15px">Teams of 6 or more: <a href="mailto:hello@recrudy.com.au?subject=Recrudy%20volume%20pricing">talk to us about volume pricing</a>. Calls and SMS run through your own accounts, at cost. Prices in Australian dollars.</p>
+  </section>
+
+  <!-- Story -->
+  <section id="story" style="background: #14834A; color: #FFFFFF">
+    <div style="max-width: 960px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #F26B1D">Our story</p>
+      <blockquote style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em">"After 25 years running agency desks in Australia, I kept paying for global platforms full of features we never used, and missing the ones we needed every day. So we built the software Australian agencies have always wanted."</blockquote>
+      <p style="margin: 0; font-size: 17px">Tyson Wood, Founder, Recrudy</p>
+      <div style="margin-top: 16px; display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; background: rgba(255,255,255,0.1); max-width: 640px">
+        <svg aria-hidden="true" viewBox="0 0 120 120" width="88" height="88" style="display:block;flex-shrink:0"><clipPath id="rudyStoryc"><circle cx="60" cy="60" r="60"/></clipPath><circle cx="60" cy="60" r="60" fill="#14834A"/><g clip-path="url(#rudyStoryc)"><g transform="translate(2 12) scale(0.97)">
+  <defs>
+    <linearGradient id="rudyStoryearG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3A35E"/><stop offset="1" stop-color="#C27838"/></linearGradient>
+    <radialGradient id="rudyStoryfaceG" cx="0.5" cy="0.45" r="0.6"><stop offset="0.6" stop-color="#FFFDF8"/><stop offset="1" stop-color="#F1E6D6"/></radialGradient>
+  </defs>
+  <!-- ears: long, wavy, hanging -->
+  <path d="M36 26 C20 26 10 40 10 58 C9 68 11 77 14 84 C16 88 19 86 20 83 C22 88 26 88 27 84 C29 88 33 87 34 82 C39 72 41 52 41 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M84 26 C100 26 110 40 110 58 C111 68 109 77 106 84 C104 88 101 86 100 83 C98 88 94 88 93 84 C91 88 87 87 86 82 C81 72 79 52 79 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M18 50 C16 60 18 70 21 78 M24 46 C23 58 24 68 27 78 M102 50 C104 60 102 70 99 78 M96 46 C97 58 96 68 93 78" stroke="#B9763A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- head: fluffy crown -->
+  <path d="M31 50 C29 34 37 23 46 20 C48 16 53 15 55 18 C57 14 63 14 65 18 C67 15 72 16 74 20 C83 23 91 34 89 50 C91 66 84 82 60 84 C36 82 29 66 31 50 Z" fill="url(#rudyStoryfaceG)" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- apricot crown and eye patches -->
+  <path d="M80 28 C78 24 72 21 67 21 C70 25 72 30 73 35 C77 33 81 32 84 33 Z" fill="#E7C49A" opacity="0.9"/>
+  <path d="M52 22 C54 28 55 34 55 40 M68 22 C66 28 65 34 65 40" stroke="#E4D6C2" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M86 44 C85 39 80 36 75 37 C71 38 68 40 67 43 C72 41 80 41 86 44 Z" fill="#E2BE93"/>
+  <!-- fur strands -->
+  <path d="M55 24 l2 5 M63 23 l-1 5 M36 60 l4 1 M84 60 l-4 1 M38 68 l4 -1 M82 68 l-4 -1" stroke="#E2D3BE" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- brows -->
+  <path d="M37 40 q7 -5 14 -1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M69 39 q7 -4 14 1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- left eye: big, dark brown, glossy -->
+  <ellipse cx="44.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="45" cy="50.5" r="7.4" fill="#3B2312"/>
+  <circle cx="45.4" cy="50.8" r="4.2" fill="#140B06"/>
+  <circle cx="42.4" cy="47.6" r="2.3" fill="#FFFFFF"/>
+  <circle cx="47.6" cy="53.4" r="1" fill="#FFFFFF" opacity="0.8"/>
+  <!-- right eye: pale blue, glancing up and out (his signature) -->
+  <ellipse cx="75.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="78" cy="48" r="5.4" fill="#A9CDEC" stroke="#5E8FBF" stroke-width="1"/>
+  <circle cx="78.6" cy="47.6" r="2.4" fill="#1B2733"/>
+  <circle cx="76.6" cy="45.8" r="1.5" fill="#FFFFFF"/>
+  <!-- beard / dark muzzle -->
+  <path d="M50 62 C48 69 52 76 60 76 C68 76 72 69 70 62 C66 65 54 65 50 62 Z" fill="#9C8B7C" opacity="0.85"/>
+  <path d="M53 68 l-1 4 M57 70 l-0.4 4 M63 70 l0.4 4 M67 68 l1 4" stroke="#6B5C50" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- natural frown with two little white teeth showing (underbite) -->
+  <path d="M52.5 72.5 C55 68.6 65 68.6 67.5 72.5" stroke="#2B201A" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M56.6 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M61.2 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M55 74.6 C58 75.8 62 75.8 65 74.6" stroke="#4A3D34" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- nose: broad, flat-faced -->
+  <path d="M52.5 58.5 C52.5 54 67.5 54 67.5 58.5 C67.5 63 63 65.5 60 65.5 C57 65.5 52.5 63 52.5 58.5 Z" fill="#1A1412" stroke="#3A2617" stroke-width="1"/>
+  <path d="M56 61 q1.5 -1.6 3 0 M61 61 q1.5 -1.6 3 0" stroke="#4A403C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="57" cy="56.8" rx="2.6" ry="1.2" fill="#5B524E"/>
+<rect x="-10" y="88" width="140" height="40" fill="#0E6236"/><path d="M28 88 C28 75 47 75 47 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M73 88 C73 75 92 75 92 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M34.5 80 v6 M40.5 80 v6 M79.5 80 v6 M85.5 80 v6" stroke="#3A2617" stroke-width="1.5" stroke-linecap="round"/></g></g></svg>
+        <p style="margin: 0; font-size: 16px; color: #E6F4EC"><strong style="color: #FFFFFF">Why Recrudy?</strong> The name comes naturally from recruitment. It's also a mash-up with a lovely dog called Rudy. Our icon is Rudy himself: a family dog with one brown eye and one blue, still going strong today. Like all dogs, he's a great companion.<span style="display: block; margin-top: 8px; color: #FFFFFF; font-weight: 700"><span style="font-family: Inter, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.04em">recrudy<span style="color: #F26B1D">.</span></span> Your agency recruitment companion.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section id="demo" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
+    <h2 style="margin: 0; max-width: 820px; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">See it with your own desk in 30 minutes.</h2>
+    <p style="margin: 0; max-width: 620px; font-size: 18px; color: #3A3D42">We'll walk through a week in Recrudy with your roles, your clients and your process, and show you what you'd stop paying for.</p>
+    <a href="mailto:hello@recrudy.com.au?subject=Recrudy%20demo" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border-radius: 999px; background: #15171A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 18px">Book a demo</a>
+  </section>
+
+  <!-- Ask Rudy: help chat -->
+  <a href="#demo" aria-label="Ask Rudy for help" style="position: fixed; right: 24px; bottom: 24px; z-index: 20; display: inline-flex; align-items: center; gap: 10px; padding: 6px 18px 6px 6px; border-radius: 999px; background: #15171A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; box-shadow: 0 16px 32px -16px rgba(21,23,26,0.6)"><svg aria-hidden="true" viewBox="0 0 120 120" width="44" height="44" style="display:block"><clipPath id="rudyChatc"><circle cx="60" cy="60" r="60"/></clipPath><circle cx="60" cy="60" r="60" fill="#14834A"/><g clip-path="url(#rudyChatc)"><g transform="translate(2 12) scale(0.97)"><g class="rudyHead">
+  <defs>
+    <linearGradient id="rudyChatearG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3A35E"/><stop offset="1" stop-color="#C27838"/></linearGradient>
+    <radialGradient id="rudyChatfaceG" cx="0.5" cy="0.45" r="0.6"><stop offset="0.6" stop-color="#FFFDF8"/><stop offset="1" stop-color="#F1E6D6"/></radialGradient>
+  </defs>
+  <!-- ears: long, wavy, hanging -->
+  <path d="M36 26 C20 26 10 40 10 58 C9 68 11 77 14 84 C16 88 19 86 20 83 C22 88 26 88 27 84 C29 88 33 87 34 82 C39 72 41 52 41 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M84 26 C100 26 110 40 110 58 C111 68 109 77 106 84 C104 88 101 86 100 83 C98 88 94 88 93 84 C91 88 87 87 86 82 C81 72 79 52 79 36 Z" fill="#DB9A55" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M18 50 C16 60 18 70 21 78 M24 46 C23 58 24 68 27 78 M102 50 C104 60 102 70 99 78 M96 46 C97 58 96 68 93 78" stroke="#B9763A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- head: fluffy crown -->
+  <path d="M31 50 C29 34 37 23 46 20 C48 16 53 15 55 18 C57 14 63 14 65 18 C67 15 72 16 74 20 C83 23 91 34 89 50 C91 66 84 82 60 84 C36 82 29 66 31 50 Z" fill="url(#rudyChatfaceG)" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- apricot crown and eye patches -->
+  <path d="M80 28 C78 24 72 21 67 21 C70 25 72 30 73 35 C77 33 81 32 84 33 Z" fill="#E7C49A" opacity="0.9"/>
+  <path d="M52 22 C54 28 55 34 55 40 M68 22 C66 28 65 34 65 40" stroke="#E4D6C2" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M86 44 C85 39 80 36 75 37 C71 38 68 40 67 43 C72 41 80 41 86 44 Z" fill="#E2BE93"/>
+  <!-- fur strands -->
+  <path d="M55 24 l2 5 M63 23 l-1 5 M36 60 l4 1 M84 60 l-4 1 M38 68 l4 -1 M82 68 l-4 -1" stroke="#E2D3BE" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- brows -->
+  <path d="M37 40 q7 -5 14 -1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M69 39 q7 -4 14 1" stroke="#3A2617" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- left eye: big, dark brown, glossy -->
+  <ellipse cx="44.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="45" cy="50.5" r="7.4" fill="#3B2312"/>
+  <circle cx="45.4" cy="50.8" r="4.2" fill="#140B06"/>
+  <circle cx="42.4" cy="47.6" r="2.3" fill="#FFFFFF"/>
+  <circle cx="47.6" cy="53.4" r="1" fill="#FFFFFF" opacity="0.8"/>
+  <!-- right eye: pale blue, glancing up and out (his signature) -->
+  <ellipse cx="75.5" cy="50" rx="8.4" ry="8" fill="#FFFFFF" stroke="#3A2617" stroke-width="2.6"/>
+  <circle cx="78" cy="48" r="5.4" fill="#A9CDEC" stroke="#5E8FBF" stroke-width="1"/>
+  <circle cx="78.6" cy="47.6" r="2.4" fill="#1B2733"/>
+  <circle cx="76.6" cy="45.8" r="1.5" fill="#FFFFFF"/>
+  <!-- beard / dark muzzle -->
+  <path d="M50 62 C48 69 52 76 60 76 C68 76 72 69 70 62 C66 65 54 65 50 62 Z" fill="#9C8B7C" opacity="0.85"/>
+  <path d="M53 68 l-1 4 M57 70 l-0.4 4 M63 70 l0.4 4 M67 68 l1 4" stroke="#6B5C50" stroke-width="1.1" stroke-linecap="round"/>
+  <!-- natural frown with two little white teeth showing (underbite) -->
+  <path d="M52.5 72.5 C55 68.6 65 68.6 67.5 72.5" stroke="#2B201A" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M56.6 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M61.2 70.9 h2.2 v1.8 c0 0.6 -0.4 0.8 -1.1 0.8 c-0.7 0 -1.1 -0.2 -1.1 -0.8 Z" fill="#FFFFFF" stroke="#2B201A" stroke-width="0.7"/>
+  <path d="M55 74.6 C58 75.8 62 75.8 65 74.6" stroke="#4A3D34" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- nose: broad, flat-faced -->
+  <path d="M52.5 58.5 C52.5 54 67.5 54 67.5 58.5 C67.5 63 63 65.5 60 65.5 C57 65.5 52.5 63 52.5 58.5 Z" fill="#1A1412" stroke="#3A2617" stroke-width="1"/>
+  <path d="M56 61 q1.5 -1.6 3 0 M61 61 q1.5 -1.6 3 0" stroke="#4A403C" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="57" cy="56.8" rx="2.6" ry="1.2" fill="#5B524E"/>
+<g class="rudyLidL"><ellipse cx="44.5" cy="50" rx="8.7" ry="8.3" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.6"/><path d="M37.0 51 q7.5 5 15 0" stroke="#3A2617" stroke-width="2.2" fill="none" stroke-linecap="round"/></g><g class="rudyLidW"><ellipse cx="44.5" cy="50" rx="8.7" ry="8.3" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.6"/><path d="M37.0 51 q7.5 5 15 0" stroke="#3A2617" stroke-width="2.2" fill="none" stroke-linecap="round"/></g><g class="rudyLidR"><ellipse cx="75.5" cy="50" rx="8.7" ry="8.3" fill="#F3E2C9" stroke="#3A2617" stroke-width="2.6"/><path d="M68.0 51 q7.5 5 15 0" stroke="#3A2617" stroke-width="2.2" fill="none" stroke-linecap="round"/></g></g><rect x="-10" y="88" width="140" height="40" fill="#0E6236"/><path d="M28 88 C28 75 47 75 47 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M73 88 C73 75 92 75 92 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M34.5 80 v6 M40.5 80 v6 M79.5 80 v6 M85.5 80 v6" stroke="#3A2617" stroke-width="1.5" stroke-linecap="round"/></g></g></svg>Ask Rudy</a>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid #E6E6E7">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #5A5E64">
+      <span><span style="font-family: Inter, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.04em; color: #15171A">recrudy<span style="color: #F26B1D">.</span></span> Your agency recruitment companion.</span>
+      <span style="display: flex; flex-wrap: wrap; gap: 20px"><a href="#pricing" style="color: #5A5E64">Pricing</a><a href="mailto:hello@recrudy.com.au" style="color: #5A5E64">hello@recrudy.com.au</a><span>© 2026 Recrudy Pty Ltd · ACN 703 668 697</span></span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
