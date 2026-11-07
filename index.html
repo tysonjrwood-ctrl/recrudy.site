@@ -430,17 +430,17 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
       <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Two packages. Everything included. No surprises.</h2>
       <p style="margin: 0; font-size: 18px; color: #3A3D42">Per user, per month, for teams of 1 to 5. Bigger teams pay less per user.</p>
     </div>
-    <!-- Prices are shown once a visitor says who they are (Tyson, 7 Nov 2026). They come from Recrudy, not this page. -->
+    <!-- Pricing on request (Tyson, 7 Nov 2026): the request waits for approval in Recrudy, which then emails the prices. No prices on this page. -->
     <form id="see-prices" data-endpoint="/api/pricing-requests" style="position: relative; border-radius: 24px; background: var(--rc-cream); padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; align-items: end">
       <div style="grid-column: 1 / -1">
-        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 24px; font-weight: 800">See our prices</h3>
-        <p style="margin: 6px 0 0; color: #3A3D42">Tell us who you are and the prices appear straight away. We may follow up once, and never pass your details on.</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 24px; font-weight: 800">Request pricing</h3>
+        <p style="margin: 6px 0 0; color: #3A3D42">Tell us who you are and we'll email our pricing, usually within one business day. We never pass your details on.</p>
       </div>
       <label style="font-weight: 600; font-size: 15px">Your name<input name="name" required maxlength="120" autocomplete="name" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid #D4D4D6; background: #FFFFFF; font: inherit; color: #15171A"></label>
       <label style="font-weight: 600; font-size: 15px">Agency or company<input name="agency_name" required maxlength="160" autocomplete="organization" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid #D4D4D6; background: #FFFFFF; font: inherit; color: #15171A"></label>
       <label style="font-weight: 600; font-size: 15px">Work email<input name="email" type="email" required maxlength="190" autocomplete="email" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid #D4D4D6; background: #FFFFFF; font: inherit; color: #15171A"></label>
       <label aria-hidden="true" style="position: absolute; left: -9999px">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-      <button type="submit" style="min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: var(--rc-ear); color: #15171A; font: inherit; font-weight: 700; cursor: pointer">Show me the prices</button>
+      <button type="submit" style="min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: var(--rc-ear); color: #15171A; font: inherit; font-weight: 700; cursor: pointer">Request pricing</button>
       <p data-message role="status" style="grid-column: 1 / -1; margin: 0; font-size: 15px; color: #3A3D42"></p>
     </form>
 
@@ -450,7 +450,7 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
           <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Base</h3>
           <p style="margin: 4px 0 0; color: #3A3D42">Run the whole desk: candidates, clients, jobs and placements.</p>
         </div>
-        <p data-price="base" style="margin: 0; display: flex; align-items: baseline; gap: 8px"><span data-amount style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.02em; display: none"></span><span data-per style="color: #3A3D42; display: none">per user / month + GST</span><a href="#see-prices" data-locked style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--rc-ear-soft); color: #15171A; font-weight: 600; font-size: 15px; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>See the price</a></p>
+        <p data-price="base" style="margin: 0; display: flex; align-items: baseline; gap: 8px"><a href="#see-prices" data-locked style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--rc-ear-soft); color: #15171A; font-weight: 600; font-size: 15px; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pricing on request</a></p>
         <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
           <li>Candidates, ATS and Job Centre</li>
           <li>Career Site Interaction and Multi Job Board Publishing</li>
@@ -471,7 +471,7 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
           <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Premium <span style="margin-left: 8px; padding: 4px 12px; border-radius: 999px; background: var(--rc-ear-pale); color: #15171A; font-size: 13px; font-weight: 700; vertical-align: middle">Most value</span></h3>
           <p style="margin: 4px 0 0; color: #3A3D42">Everything in Base, plus headhunting, floats, CV Studio, terms and HR.</p>
         </div>
-        <p data-price="premium" style="margin: 0; display: flex; align-items: baseline; gap: 8px"><span data-amount style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.02em; display: none"></span><span data-per style="color: #3A3D42; display: none">per user / month + GST</span><a href="#see-prices" data-locked style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--rc-ear-soft); color: #15171A; font-weight: 600; font-size: 15px; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>See the price</a></p>
+        <p data-price="premium" style="margin: 0; display: flex; align-items: baseline; gap: 8px"><a href="#see-prices" data-locked style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--rc-ear-soft); color: #15171A; font-weight: 600; font-size: 15px; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pricing on request</a></p>
         <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: #3A3D42">
           <li>Everything in Base</li>
           <li>Talent Pipeline: search the talent market</li>
@@ -492,8 +492,6 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
   <section id="story" style="background: var(--rc-ear-pale); color: #15171A">
     <div style="max-width: 960px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
       <p style="margin: 0; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: #15171A">Our story</p>
-      <blockquote style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em">"After 25 years running agency desks in Australia, I kept paying for global platforms full of features we never used, and missing the ones we needed every day. So we built the software Australian agencies have always wanted."</blockquote>
-      <p style="margin: 0; font-size: 17px">Tyson Wood, Founder, Recrudy</p>
       <div style="margin-top: 16px; display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; background: rgba(255,255,255,0.65); max-width: 640px">
         <svg aria-hidden="true" viewBox="0 0 120 120" width="88" height="88" style="display:block;flex-shrink:0"><clipPath id="rudyStoryc"><circle cx="60" cy="60" r="60"/></clipPath><circle cx="60" cy="60" r="60" style="fill: var(--rc-ear)"/><g clip-path="url(#rudyStoryc)"><g transform="translate(2 12) scale(0.97)">
   <defs>
@@ -606,34 +604,28 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
   </footer>
 </div>
 <script>
-/* "See our prices" (Tyson, 7 Nov 2026): send who they are to Recrudy, which tells the team in Nova and sends the
-   prices back. A visitor who has already asked sees them again on this device. */
+/* "Request pricing" (Tyson, 7 Nov 2026): the request goes to Recrudy and waits for approval; approved requests are
+   emailed the prices. Nothing is shown here. */
 (function(){
   var form = document.getElementById('see-prices'); if( ! form ) return;
   var msg = form.querySelector('[data-message]');
-  function show( prices ){
-    document.querySelectorAll('[data-price]').forEach(function( slot ){
-      var amount = prices[ slot.getAttribute('data-price') ]; if( ! amount ) return;
-      var a = slot.querySelector('[data-amount]'); a.textContent = amount; a.style.display = '';
-      slot.querySelector('[data-per]').style.display = '';
-      var lock = slot.querySelector('[data-locked]'); if( lock ) lock.style.display = 'none';
-    });
-    form.style.display = 'none';
-  }
-  try { var saved = JSON.parse( localStorage.getItem('recrudyPrices') || 'null' ); if( saved && saved.base ) show( saved ); } catch( e ) {}
   form.addEventListener('submit', function( e ){
     e.preventDefault();
-    var button = form.querySelector('button'); button.disabled = true; msg.textContent = 'One moment…';
+    var button = form.querySelector('button'); button.disabled = true; msg.textContent = 'Sending…';
     var body = {}; new FormData( form ).forEach(function( v, k ){ body[ k ] = v; });
     fetch( form.getAttribute('data-endpoint'), { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify( body ) } )
       .then(function( r ){ return r.json().then(function( j ){ return { ok: r.ok, j: j }; }); })
       .then(function( res ){
-        if( res.ok && res.j.prices ){ try { localStorage.setItem('recrudyPrices', JSON.stringify( res.j.prices )); } catch( e ) {} show( res.j.prices ); return; }
+        if( res.ok ){
+          form.querySelectorAll('label, button').forEach(function( el ){ el.style.display = 'none'; });
+          msg.style.fontWeight = '600'; msg.textContent = res.j.message || 'Thanks. We\'ll email our pricing to you shortly.';
+          return;
+        }
         msg.textContent = res.j && res.j.errors ? Object.values( res.j.errors )[0][0] : 'Something went wrong. Please try again.';
         button.disabled = false;
       })
       .catch(function(){
-        msg.innerHTML = 'Sorry, we couldn\'t load the prices just now. <a href="mailto:hello@recrudy.com.au?subject=Recrudy%20pricing">Email us</a> and we\'ll send them today.';
+        msg.innerHTML = 'Sorry, that didn\'t go through. <a href="mailto:hello@recrudy.com.au?subject=Recrudy%20pricing">Email us</a> and we\'ll send our pricing.';
         button.disabled = false;
       });
   });
