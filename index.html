@@ -452,24 +452,26 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
   <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
     <div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
       <p style="margin: 0; color: var(--rc-ear-ink); font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase">Pricing</p>
-      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Two packages. Everything included. No surprises.</h2>
-      <p style="margin: 0; font-size: 18px; color: var(--rc-text)">Per user, per month, for teams of 1 to 5. Bigger teams pay less per user.</p>
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Three packages. Everything included. No surprises.</h2>
+      <p style="margin: 0; font-size: 18px; color: var(--rc-text)">Per user, per month. Bigger teams pay less per user, and paying annually gets two months free.</p>
     </div>
-    <!-- Pricing on request (Tyson, 7 Nov 2026): the request waits for approval in Recrudy, which then emails the prices. No prices on this page. -->
+    <!-- Pricing on request (Tyson, 7 Nov 2026): the request waits for approval in Recrudy, which then emails a private link to the price calculator (Tyson, 9 Nov 2026). No prices on this page. -->
     <form id="see-prices" data-endpoint="/api/pricing-requests" style="position: relative; border-radius: 24px; background: var(--rc-cream); padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; align-items: end">
       <div style="grid-column: 1 / -1">
         <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 24px; font-weight: 800">Request pricing</h3>
-        <p style="margin: 6px 0 0; color: var(--rc-text)">Tell us who you are and we'll email our pricing, usually within one business day. We never pass your details on.</p>
+        <p style="margin: 6px 0 0; color: var(--rc-text)">Tell us who you are and we'll email you a private link to your prices, usually within one business day. Slide to your team size and see monthly or annual. We never pass your details on.</p>
       </div>
       <label style="font-weight: 600; font-size: 15px">Your name<input name="name" required maxlength="120" autocomplete="name" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--rc-line-strong); background: var(--rc-surface); font: inherit; color: var(--rc-ink)"></label>
       <label style="font-weight: 600; font-size: 15px">Agency or company<input name="agency_name" required maxlength="160" autocomplete="organization" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--rc-line-strong); background: var(--rc-surface); font: inherit; color: var(--rc-ink)"></label>
       <label style="font-weight: 600; font-size: 15px">Work email<input name="email" type="email" required maxlength="190" autocomplete="email" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--rc-line-strong); background: var(--rc-surface); font: inherit; color: var(--rc-ink)"></label>
+      <label style="font-weight: 600; font-size: 15px">Phone <span style="font-weight: 400">(optional)</span><input name="phone" type="tel" maxlength="40" autocomplete="tel" style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--rc-line-strong); background: var(--rc-surface); font: inherit; color: var(--rc-ink)"></label>
+      <label style="font-weight: 600; font-size: 15px">Users in your team<input name="users" type="number" min="1" max="1000" inputmode="numeric" required style="display: block; width: 100%; box-sizing: border-box; min-height: 48px; margin-top: 6px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--rc-line-strong); background: var(--rc-surface); font: inherit; color: var(--rc-ink)"></label>
       <label aria-hidden="true" style="position: absolute; left: -9999px">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <button type="submit" style="min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; background: var(--rc-ear); color: var(--rc-on-ear); font: inherit; font-weight: 700; cursor: pointer">Request pricing</button>
       <p data-message role="status" style="grid-column: 1 / -1; margin: 0; font-size: 15px; color: var(--rc-text)"></p>
     </form>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 24px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px">
       <div style="border-radius: 28px; background: var(--rc-surface); border: 1.5px solid var(--rc-line-strong); padding: 36px; display: flex; flex-direction: column; gap: 20px">
         <div>
           <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Base</h3>
@@ -506,11 +508,29 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
           <li>CV Studio: details removed, submission-ready CVs</li>
           <li>TOB-Pilot: fees and guarantees from signed terms</li>
           <li>StaffroomHR for your own team</li>
+          <li>Invoicing: placements become invoices on your letterhead</li>
+          <li>Marketing: social posts planned a month ahead (coming soon)</li>
         </ul>
         <div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px"><a href="/auth#register" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 20px; border-radius: 999px; text-decoration: none; font-weight: 600; flex: 1 1 160px; background: var(--rc-ear); color: var(--rc-on-ear); font-weight: 700">Start free trial</a><a href="#demo" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 20px; border-radius: 999px; text-decoration: none; font-weight: 600; flex: 1 1 160px; border: 1.5px solid var(--rc-ink); color: var(--rc-ink)">Book a demo</a></div>
       </div>
+      <div style="border-radius: 28px; background: var(--rc-surface); border: 1.5px solid var(--rc-line-strong); padding: 36px; display: flex; flex-direction: column; gap: 20px">
+        <div>
+          <h3 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 30px; font-weight: 800">Business First</h3>
+          <p style="margin: 4px 0 0; color: var(--rc-text)">Everything in Premium, plus your agency's back office.</p>
+        </div>
+        <p data-price="business-first" style="margin: 0; display: flex; align-items: baseline; gap: 8px"><a href="#see-prices" data-locked style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--rc-ear-soft); color: var(--rc-ink); font-weight: 600; font-size: 15px; text-decoration: none"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pricing on request</a></p>
+        <ul class="rc-fold" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--rc-text)">
+          <li>Everything in Premium</li>
+          <li>Finance: bank feeds that mark invoices paid (coming soon)</li>
+          <li>Cashflow, forecast and aged debtors</li>
+          <li>Budgets and your chart of accounts</li>
+          <li>Super, BAS and end of year estimates</li>
+          <li>Payroll with Single Touch Payroll to follow</li>
+        </ul>
+        <div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px"><a href="/auth#register" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 20px; border-radius: 999px; text-decoration: none; font-weight: 600; flex: 1 1 160px; background: var(--rc-ear); color: var(--rc-on-ear)">Start free trial</a><a href="#demo" style="display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 20px; border-radius: 999px; text-decoration: none; font-weight: 600; flex: 1 1 160px; border: 1.5px solid var(--rc-ink); color: var(--rc-ink)">Book a demo</a></div>
+      </div>
     </div>
-    <p style="margin: 0; color: var(--rc-text); font-size: 15px">Teams of 6 or more: <a href="mailto:hello@recrudy.com.au?subject=Recrudy%20volume%20pricing">talk to us about volume pricing</a>. Every new agency starts with 14 business days of Premium, free. Calls and SMS run through your own accounts, at cost. Prices in Australian dollars.</p>
+    <p style="margin: 0; color: var(--rc-text); font-size: 15px">Bigger teams pay less per user: your price link works it out for your team size. Every new agency starts with 14 business days of Premium, free. Calls and SMS run through your own accounts, at cost. Prices in Australian dollars.</p>
   </section>
 
   <!-- Story -->
