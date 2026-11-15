@@ -542,15 +542,15 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
       <!-- Rudy's films (Tyson, 15 Nov 2026): short, silent, they play when they scroll into view. -->
       <div class="rc-films" style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
         <figure style="margin: 0">
-          <video class="rc-film" src="films/rudy-arrives.mp4" poster="films/rudy-arrives.jpg" muted loop playsinline preload="none" aria-label="Rudy skips in and sits above the Recrudy name" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <video class="rc-film" data-film="films/rudy-arrives" poster="films/rudy-arrives.webp" muted loop playsinline preload="none" aria-label="Rudy skips in and sits above the Recrudy name" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></video>
           <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Meet Rudy.</strong> The family dog behind the name.</figcaption>
         </figure>
         <figure style="margin: 0">
-          <video class="rc-film" src="films/rudy-sniffing.mp4" poster="films/rudy-sniffing.jpg" muted loop playsinline preload="none" aria-label="Rudy sniffs and digs" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <video class="rc-film" data-film="films/rudy-sniffing" poster="films/rudy-sniffing.webp" muted loop playsinline preload="none" aria-label="Rudy sniffs and digs" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></video>
           <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Sniffing out candidates.</strong> Rudy digs through your talent so you don't have to.</figcaption>
         </figure>
         <figure style="margin: 0">
-          <video class="rc-film" src="films/rudy-celebrates.mp4" poster="films/rudy-celebrates.jpg" muted loop playsinline preload="none" aria-label="Rudy opens a present and confetti flies" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <video class="rc-film" data-film="films/rudy-celebrates" poster="films/rudy-celebrates.webp" muted loop playsinline preload="none" aria-label="Rudy opens a present and confetti flies" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain"></video>
           <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Every placement, celebrated.</strong> Woof!</figcaption>
         </figure>
       </div>
@@ -673,15 +673,65 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
 })();
 </script>
 <script>
-/* Rudy's films play while they're on screen, and not at all for people who prefer less motion (they get the controls). */
+/* Rudy's films, with no background (Tyson, 15 Nov 2026): he stands straight on the page. Chrome, Edge and Firefox
+   play see-through WebM. Safari and iPhones can't, so they get an MP4 with the picture on top and its see-through mask
+   underneath, joined on a canvas. They play while on screen; people who prefer less motion see the still and tap to play. */
 (function(){
   var films = document.querySelectorAll('.rc-film'); if( ! films.length ) return;
+  var ua = navigator.userAgent;
+  var webkit = ( /AppleWebKit/.test( ua ) && ! /Chrome|Chromium|Edg|OPR|Android/.test( ua ) ) || /iPad|iPhone|iPod/.test( ua ) || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 );
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if( still || ! ( 'IntersectionObserver' in window ) ){ films.forEach(function( v ){ v.controls = true; v.preload = 'metadata'; }); return; }
+
+  function joined( v ){
+    var c = document.createElement('canvas');
+    c.className = 'rc-film-canvas'; c.setAttribute('role', 'img'); c.setAttribute('aria-label', v.getAttribute('aria-label') || '');
+    c.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;background:url(' + v.getAttribute('poster') + ') center/contain no-repeat';
+    var gl = c.getContext('webgl', { premultipliedAlpha: true, alpha: true });
+    if( ! gl ) return false;
+    var sh = function( type, src ){ var o = gl.createShader( type ); gl.shaderSource( o, src ); gl.compileShader( o ); return o; };
+    var pr = gl.createProgram();
+    gl.attachShader( pr, sh( gl.VERTEX_SHADER, 'attribute vec2 p;varying vec2 t;void main(){t=vec2((p.x+1.)/2.,(1.-p.y)/2.);gl_Position=vec4(p,0.,1.);}' ) );
+    gl.attachShader( pr, sh( gl.FRAGMENT_SHADER, 'precision mediump float;uniform sampler2D s;varying vec2 t;void main(){vec3 c=texture2D(s,vec2(t.x,t.y*.5)).rgb;float a=texture2D(s,vec2(t.x,.5+t.y*.5)).r;gl_FragColor=vec4(min(c,vec3(a)),a);}' ) );
+    gl.linkProgram( pr ); if( ! gl.getProgramParameter( pr, gl.LINK_STATUS ) ) return false;
+    gl.useProgram( pr );
+    gl.bindBuffer( gl.ARRAY_BUFFER, gl.createBuffer() );
+    gl.bufferData( gl.ARRAY_BUFFER, new Float32Array([ -1,-1, 1,-1, -1,1, 1,1 ]), gl.STATIC_DRAW );
+    var loc = gl.getAttribLocation( pr, 'p' ); gl.enableVertexAttribArray( loc ); gl.vertexAttribPointer( loc, 2, gl.FLOAT, false, 0, 0 );
+    gl.bindTexture( gl.TEXTURE_2D, gl.createTexture() );
+    [ gl.TEXTURE_WRAP_S, gl.TEXTURE_WRAP_T ].forEach(function( k ){ gl.texParameteri( gl.TEXTURE_2D, k, gl.CLAMP_TO_EDGE ); });
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR ); gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
+    function draw(){
+      if( v.readyState >= 2 && v.videoWidth ){
+        if( c.width !== v.videoWidth ){ c.width = v.videoWidth; c.height = v.videoHeight / 2; gl.viewport( 0, 0, c.width, c.height ); }
+        gl.texImage2D( gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, v );
+        gl.drawArrays( gl.TRIANGLE_STRIP, 0, 4 );
+        c.style.backgroundImage = 'none';
+      }
+      if( ! v.paused ) next();
+    }
+    function next(){ v.requestVideoFrameCallback ? v.requestVideoFrameCallback( draw ) : requestAnimationFrame( draw ); }
+    v.addEventListener('play', next);
+    v.addEventListener('seeked', draw);
+    v.src = v.dataset.film + '-stacked.mp4';
+    v.removeAttribute('aria-label'); v.setAttribute('aria-hidden', 'true');
+    v.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none';
+    v.parentNode.insertBefore( c, v );
+    c.addEventListener('click', function(){ v.paused ? v.play() : v.pause(); });
+    v._shown = c;
+    return true;
+  }
+
+  films.forEach(function( v ){
+    if( ! ( webkit && joined( v ) ) ){ v.src = v.dataset.film + '.webm'; v._shown = v; }
+  });
+  if( still || ! ( 'IntersectionObserver' in window ) ){
+    films.forEach(function( v ){ if( v._shown === v ){ v.controls = true; } v.preload = 'metadata'; });
+    return;
+  }
   var seen = new IntersectionObserver(function( entries ){
-    entries.forEach(function( e ){ var v = e.target; if( e.isIntersecting ){ v.preload = 'auto'; var p = v.play(); if( p && p.catch ) p.catch(function(){ v.controls = true; }); } else { v.pause(); } });
+    entries.forEach(function( e ){ var v = e.target._film; if( e.isIntersecting ){ v.preload = 'auto'; var p = v.play(); if( p && p.catch ) p.catch(function(){ if( v._shown === v ) v.controls = true; }); } else { v.pause(); } });
   }, { threshold: 0.4 });
-  films.forEach(function( v ){ seen.observe( v ); });
+  films.forEach(function( v ){ v._shown._film = v; seen.observe( v._shown ); });
 })();
 </script>
 </body>
