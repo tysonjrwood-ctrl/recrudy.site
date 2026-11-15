@@ -534,7 +534,7 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
 
   <!-- Story -->
   <section id="story" style="background: var(--rc-ear-pale); color: var(--rc-ink)">
-    <div style="max-width: 960px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
       <p style="margin: 0; font-weight: 600; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--rc-ink)">Our story</p>
       <div style="margin-top: 16px; display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; background: var(--rc-glass); max-width: 640px">
         <svg aria-hidden="true" viewBox="0 0 120 120" width="88" height="88" style="display:block;flex-shrink:0"><clipPath id="rudyStoryc"><circle cx="60" cy="60" r="60"/></clipPath><circle cx="60" cy="60" r="60" style="fill: var(--rc-ear)"/><g clip-path="url(#rudyStoryc)"><g transform="translate(2 12) scale(0.97)">
@@ -582,6 +582,21 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
   <ellipse cx="57" cy="56.8" rx="2.6" ry="1.2" fill="#5B524E"/>
 <rect x="-10" y="88" width="140" height="40" style="fill: var(--rc-ear-ink)"/><path d="M28 88 C28 75 47 75 47 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M73 88 C73 75 92 75 92 88 Z" fill="#FFFDF8" stroke="#3A2617" stroke-width="2.4" stroke-linejoin="round"/><path d="M34.5 80 v6 M40.5 80 v6 M79.5 80 v6 M85.5 80 v6" stroke="#3A2617" stroke-width="1.5" stroke-linecap="round"/></g></g></svg>
         <p style="margin: 0; font-size: 16px; color: var(--rc-text)"><strong style="color: var(--rc-ink)">Why Recrudy?</strong> The name comes naturally from recruitment. It's also a mash-up with a lovely dog called Rudy. Our icon is Rudy himself: a family dog with one brown eye and one blue, still going strong today. Like all dogs, he's a great companion.<span style="display: block; margin-top: 8px; color: var(--rc-ink); font-weight: 700"><span style="font-family: Inter, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.04em">recrudy<span style="color: #C27838">.</span></span> Your agency recruitment companion.</span></p>
+      </div>
+      <!-- Rudy's films (Tyson, 15 Nov 2026): short, silent, they play when they scroll into view. -->
+      <div class="rc-films" style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <figure style="margin: 0">
+          <video class="rc-film" src="films/rudy-arrives.mp4" poster="films/rudy-arrives.jpg" muted loop playsinline preload="none" aria-label="Rudy skips in and sits above the Recrudy name" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Meet Rudy.</strong> The family dog behind the name.</figcaption>
+        </figure>
+        <figure style="margin: 0">
+          <video class="rc-film" src="films/rudy-sniffing.mp4" poster="films/rudy-sniffing.jpg" muted loop playsinline preload="none" aria-label="Rudy sniffs and digs" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Sniffing out candidates.</strong> Rudy digs through your talent so you don't have to.</figcaption>
+        </figure>
+        <figure style="margin: 0">
+          <video class="rc-film" src="films/rudy-celebrates.mp4" poster="films/rudy-celebrates.jpg" muted loop playsinline preload="none" aria-label="Rudy opens a present and confetti flies" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; background: var(--rc-glass)"></video>
+          <figcaption style="margin-top: 10px; font-size: 15px; color: var(--rc-ink)"><strong>Every placement, celebrated.</strong> Woof!</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -699,6 +714,18 @@ a[aria-label="Ask Rudy for help"]:hover .rudyHead{animation-duration:2.4s}
     more.addEventListener('click', function(){ var folded = el.classList.toggle('rc-folded'); more.textContent = folded ? 'Show more' : 'Show less'; more.setAttribute('aria-expanded', ! folded); });
     el.parentNode.insertBefore( more, el.nextSibling );
   });
+})();
+</script>
+<script>
+/* Rudy's films play while they're on screen, and not at all for people who prefer less motion (they get the controls). */
+(function(){
+  var films = document.querySelectorAll('.rc-film'); if( ! films.length ) return;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if( still || ! ( 'IntersectionObserver' in window ) ){ films.forEach(function( v ){ v.controls = true; v.preload = 'metadata'; }); return; }
+  var seen = new IntersectionObserver(function( entries ){
+    entries.forEach(function( e ){ var v = e.target; if( e.isIntersecting ){ v.preload = 'auto'; var p = v.play(); if( p && p.catch ) p.catch(function(){ v.controls = true; }); } else { v.pause(); } });
+  }, { threshold: 0.4 });
+  films.forEach(function( v ){ seen.observe( v ); });
 })();
 </script>
 </body>
